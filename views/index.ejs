@@ -8,15 +8,26 @@
     <header><%- include('./components/header'); %></header>
 
     <main>
-      <div>Santosh is exicted to see the app running.</div>
+      <!-- <div>Santosh is exicted to see the app running.</div> -->
       <!-- search box for searching of colleges based on location or name -->
+      <%- include("./components/home_hero") %>
 
       <!-- features of the application in form of cards -->
       <!-- this section will be auto scrollable -->
       <!-- overview of the college, connect with college students, become ambassdor, need help -->
+      <%- include("./components/home_carousel", { carousel_cards }); %>
 
       <!-- some of the most popular colleges with high ratings -->
       <!-- this will be in the form of list of cards -->
+      <div class="mt-8 px-2">
+        <h2 class="text-3xl font-bold mx-4">Top Colleges</h2>
+        <div class="grid gap-y-2 mt-3">
+          <% college_cards.forEach(card => { %>
+            <%- include("./components/college_card", card); %>
+          <% }) %>
+        </div>
+      </div>
+
     </main>
 
     <footer><%- include('./components/footer'); %></footer>
