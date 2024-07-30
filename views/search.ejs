@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./components/head'); %>
+</head>
+
+<body>
+    <header><%- include('./components/search_header'); %></header>
+
+    <main>
+        <!-- on opening of this page the user will be prompted to type in the searchbox -->
+        <div class="mt-8 px-2">
+            <h2 class="text-3xl font-bold mx-4">Top Colleges</h2>
+            <div class="grid gap-y-2 mt-3">
+<!-- 
+                < college_cards.forEach(card=> { %>
+                    <- include("./components/college_card", card); >
+                        < }) >
+                         -->
+            </div>
+        </div>
+
+        <!-- this will be shown when the user search -->
+        <div class="mt-8 px-2">
+            <!-- this will be shown when there is no search results -->
+
+            <h2 class="text-3xl font-bold mx-4">Search Results</h2>
+            <div class="grid gap-y-2 mt-3">
+                <!-- find out how to show card template using the js as we will not have template engine avialable -->
+            </div>
+
+            <!-- the pagination component will be shown only when there is search result avialable -->
+            <div class="join">
+                <button class="join-item btn">1</button>
+                <button class="join-item btn">2</button>
+                <button class="join-item btn btn-disabled">...</button>
+                <button class="join-item btn">99</button>
+                <button class="join-item btn">100</button>
+            </div>
+        </div>
+    </main>
+
+    <footer><%- include('./components/footer'); %></footer>
+</body>
+
+</html>

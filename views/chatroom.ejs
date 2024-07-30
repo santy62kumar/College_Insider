@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./components/head'); %>
+</head>
+
+<body>
+    <header><%- include('./components/header'); %></header>
+
+    <main>
+        <div class="flex">
+            <div class="w-80 h-full overflow-scroll divide-y">
+                <div class="flex justify-between px-2 py-1">
+                    <div>
+                        <div class="avatar online">
+                            <div class="w-24 rounded-full">
+                                <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                            </div>
+                        </div>
+                        <!-- <div class="avatar offline">
+                            <div class="w-24 rounded-full">
+                                <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                            </div>
+                        </div> -->
+
+                        <span class="text-base font-normal truncate">Rohan Kumar</span>
+                    </div>
+
+                    <div class="badge badge-secondary">+16</div>
+                </div>
+            </div>
+
+            <div class="grow h-full">
+                <div class="w-full px-2 py-1 flex justify-between">
+                    <div>
+                        <div class="avatar online">
+                            <div class="w-24 rounded-full">
+                                <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                            </div>
+                        </div>
+                        <!-- <div class="avatar offline">
+                        <div class="w-24 rounded-full">
+                            <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                        </div>
+                    </div> -->
+
+                        <div class="flex flex-col">
+                            <span class="text-base font-normal truncate">Rohan Kumar</span>
+                            <span class="text-sm font-light">03:00 AM</span>
+                        </div>
+                    </div>
+
+                    <div class="dropdown dropdown-end">
+                        <div tabindex="0" role="button" class="m-1">
+                            <button class="btn btn-circle">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0" />
+                                </svg>
+                            </button>
+                        </div>
+                        <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                            <li><a>Delete</a></li>
+                            <li><a>Report</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="grow overflow-scroll">
+
+                </div>
+
+                <div class="flex flex-row justify-between">
+                    <div class="dropdown dropdown-top">
+                        <div tabindex="0" role="button" class="m-1">
+                            <button class="btn btn-circle">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4.5 3a2.5 2.5 0 0 1 5 0v9a1.5 1.5 0 0 1-3 0V5a.5.5 0 0 1 1 0v7a.5.5 0 0 0 1 0V3a1.5 1.5 0 1 0-3 0v9a2.5 2.5 0 0 0 5 0V5a.5.5 0 0 1 1 0v7a3.5 3.5 0 1 1-7 0z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                            <li><a>Upload Document</a></li>
+                            <li><a>Upload Image</a></li>
+                            <li><a>Upload Video</a></li>
+                        </ul>
+                    </div>
+
+
+                    <textarea class="textarea textarea-accent" placeholder="Enter Message"></textarea>
+
+                    <button class="btn btn-circle btn-secondary">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 rotate-45" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer><%- include('./components/footer'); %></footer>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./components/head'); %>
+</head>
+
+<body>
+    <header><%- include('./components/header'); %></header>
+
+    <main class="w-2/4 mx-auto mt-0 pt-0 border border-solid border-slate-700">
+        <div class="min-h-32 bg-primary"></div>
+
+        <div class="mx-auto flex items-center justify-center indicator" style="margin-top: -4rem;">
+            <span class="indicator-item badge badge-success"></span>
+            <img class="mask mask-circle w-32 h-32 border-4 border-solid border-white"
+            src="https://img.daisyui.com/images/stock/photo-1567653418876-5bb0e566e1c2.webp" />
+        </div>
+
+        <div class="w-full mx-4">
+            <h3 class="font-bold text-xl text-center">Rohan Kumar</h3>
+            <span class="block text-center font-semibold text-slate-300">IIIT Bhagalpur</span>
+            <p class="text-center">This is my Bio which will tell about my accomplishments and my hobbies.</p>
+
+            <div class="flex flex-wrap justify-around gap-4 px-8">
+                <div class="flex flex-col">
+                    <span>Connections</span>
+                    <span>960</span>
+                </div>
+                <div class="flex flex-col">
+                    <span>Joined On</span>
+                    <span>11 Dec 2021</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 divide-y m-4">
+            <a href="">Become College Ambassdor</a>
+            <a href="">Become a College's Alumni</a>
+        </div>
+    </main>
+
+    <footer><%- include('./components/footer'); %></footer>
+</body>
+
+</html>

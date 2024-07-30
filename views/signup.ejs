@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./components/head'); %>
+</head>
+
+<body>
+    <header><%- include('./components/header'); %></header>
+
+    <main class="flex flex-wrap items-center justify-center my-16">
+        <div id="enter-detail-container" class="flex flex-col gap-4">
+            <div>
+                <ul class="steps w-full">
+                    <li class="step step-info">Verify</li>
+                    <li class="step">Register</li>
+                </ul>
+            </div>
+            <label class="input input-bordered flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                    class="h-4 w-4 opacity-70">
+                    <path
+                        d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
+                    <path
+                        d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
+                </svg>
+                <input id="sign-email" type="text" class="grow" placeholder="Email" required />
+            </label>
+            <label class="input input-bordered flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                    class="h-4 w-4 opacity-70">
+                    <path
+                        d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
+                </svg>
+                <input id="sign-username" type="text" class="grow" placeholder="Username" required />
+                <div class="tooltip" data-tip="Available">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="h-4 w-4 opacity-70 text-success" viewBox="0 0 16 16">
+                        <path
+                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                    </svg>
+                </div>
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="h-4 w-4 opacity-70 text-warning" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z" />
+                </svg> -->
+            </label>
+            <label class="input input-bordered flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                    class="h-4 w-4 opacity-70">
+                    <path fill-rule="evenodd"
+                        d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z"
+                        clip-rule="evenodd" />
+                </svg>
+                <input id="sign-password" type="password" class="grow" value="" placeholder="Password" required />
+            </label>
+
+            <button type="submit" id="send-otp-btn" class="btn btn-wide btn-primary">Send OTP</button>
+        </div>
+
+        <div id="verify-container" class="flex flex-col gap-4 hidden">
+            <div>
+                <ul class="steps w-full">
+                    <li class="step step-info">Verify</li>
+                    <li class="step step-info">Register</li>
+                </ul>
+            </div>
+            <span id="signup-verify-email-text" class="w-64 text-wrap"></span>
+            <input id="signup-verify-otp" type="text" placeholder="Enter the OTP" class="input input-bordered w-full max-w-xs" />
+            <button id="signup-verify-btn" class="btn btn-wide btn-secondary">Signup</button>
+        </div>
+
+        <div id="enter-extra-container" class="flex flex-col gap-4 bg-base-200 hidden">
+            <div class="collapse collapse-arrow">
+                <input type="radio" name="CollegeSignupAccordion" checked="checked" />
+                <div class="collapse-title text-xl font-medium">Are you already attending/attended College!</div>
+                <div class="collapse-content mt-3">
+                    <div class="flex flex-col gap-4">
+                        <div class="flex justify-between gap-4">
+                            <select class="select select-bordered w-full max-w-xs">
+                                <option disabled selected>Choose College</option>
+                                <option>IIIT Bhagalpur</option>
+                                <option>IIIT Bhagalpur</option>
+                            </select>
+                            <select class="select select-bordered w-full max-w-xs">
+                                <option disabled selected>Choose Branch</option>
+                                <option>Computer Science</option>
+                                <option>Electronics and Communication Engineering</option>
+                            </select>
+                        </div>
+                        <div class="flex justify-between gap-4">
+                            <select class="select select-bordered w-full max-w-xs">
+                                <option disabled selected>Year Joined</option>
+                                <option>2021</option>
+                                <option>2022</option>
+                            </select>
+                            <select class="select select-bordered w-full max-w-xs">
+                                <option disabled selected>Year of Completion</option>
+                                <option>2021</option>
+                                <option>2022</option>
+                                <option>2023</option>
+                                <option>2024</option>
+                                <option>2025</option>
+                            </select>
+                        </div>
+                        <!-- <div>
+                            <label class="input input-bordered flex items-center gap-2">
+                                Name
+                                <input type="text" class="grow" placeholder="Daisy" />
+                            </label>
+                        </div> -->
+                        <div class="mt-4">
+                            <h4 class="text-xl font-bold">Verification Method</h4>
+                            <!-- this will be injected by js -->
+                            <span class="">You have been invited to Join by Santosh.</span>
+                            <!-- this will be shown if the user has used official mail for signup -->
+                            <span>You have been recognized as the College Almuni.</span>
+                            <!-- otherwise two options will be given -->
+                            <!-- the user will be set unverfied until they click on link on their official email or get verified by others -->
+                            <div class="collapse collapse-arrow bg-base-200">
+                                <input type="radio" name="my-accordion-2" checked="checked" />
+                                <div class="collapse-title text-base font-medium">Get Verified through Official College
+                                    Email
+                                </div>
+                                <div class="collapse-content">
+                                    <div class="w-72 mx-auto">
+                                        <label class="input input-bordered flex items-center gap-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"
+                                                fill="currentColor" class="h-4 w-4 opacity-70">
+                                                <path
+                                                    d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
+                                                <path
+                                                    d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
+                                            </svg>
+                                            <input type="text" class="grow" placeholder="Email" />
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="collapse collapse-arrow bg-base-200">
+                                <input type="radio" name="my-accordion-2" />
+                                <div class="collapse-title text-base font-medium">Get Verified by other College Memebers
+                                </div>
+                                <div class="collapse-content">
+                                    <div class="form-control w-[20rem]">
+                                        <label class="label cursor-pointer">
+                                            <input type="checkbox" checked="checked"
+                                                class="checkbox checkbox-primary" />
+                                            <span class="label-text text-lg">Send request to College Ambassdor</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-control w-[21rem]">
+                                        <label class="label cursor-pointer">
+                                            <input type="checkbox" checked="checked"
+                                                class="checkbox checkbox-primary" />
+                                            <span class="label-text text-lg">Send request to All College Members</span>
+                                        </label>
+                                    </div>
+                                    <label class="form-control w-full max-w-xs mt-2">
+                                        <div class="label">
+                                            <span class="label-text text-base font-medium">Enter email to send request</span>
+                                        </div>
+                                        <input type="email" placeholder="Email"
+                                            class="input input-bordered w-full max-w-xs" />
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-accent w-32 self-end text-white">Submit</button>
+                    </div>
+                </div>
+            </div>
+            <button id="extra-skip-btn" class="btn btn-primary self-center text-white my-2 text-lg w-32">Skip</button>
+        </div>
+
+    </main>
+
+    <!-- put the warning alert here -->
+    <%- include('./components/successAlert'); %>
+    <%- include('./components/warningAlert'); %>
+    <%- include('./components/errorAlert'); %>
+
+    <footer><%- include('./components/footer'); %></footer>
+
+    <script src="./scripts/utils.js"></script>
+    <script src="./scripts/signupPage.js"></script>
+</body>
+
+</html>

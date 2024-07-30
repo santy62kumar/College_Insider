@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../components/head'); %>
+</head>
+
+<body>
+    <header><%- include('../components/header'); %></header>
+
+    <main class="flex flex-wrap items-center justify-center my-8">
+        <div class="flex flex-col border border-solid rounded-md border-slate-700">
+            <!-- rounded-lg border bg-card text-card-foreground shadow-sm w-full max-w-lg mx-auto -->
+            <div class="p-6 pb-3 flex flex-col items-center space-y-2">
+                <h2 class="text-2xl font-bold">Add New College</h2>
+            </div>
+            <div class="p-6 pt-4 space-y-4">
+                <div class="grid grid-cols-1 gap-4">
+                    <div class="space-y-2">
+                        <label
+                            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                            for="name">Name</label>
+                        <input
+                            class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                            id="name" placeholder="Enter college name">
+                    </div>
+                    <div class="space-y-2">
+                        <label
+                            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                            for="url">Website</label>
+                        <input
+                            class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                            id="url" placeholder="Enter college url" type="text">
+                    </div>
+                    <div class="space-y-2">
+                        <label
+                            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                            for="description">Description</label>
+                        <textarea
+                            class="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 min-h-[100px]"
+                            id="description" placeholder="Enter college description"></textarea>
+                    </div>
+                    <div class="space-y-2">
+                        <label
+                            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                            for="location">location</label>
+                        <textarea
+                            class="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 min-h-[100px]"
+                            id="location" placeholder="Enter college location"></textarea>
+                    </div>
+                    <div class="space-y-2">
+                        <label
+                            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                            for="state">State</label>
+                        <select
+                            class="select select-bordered w-full max-w-xsflex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 min-h-[100px]"
+                            id="state">
+                            <option disabled selected>Select State</option>
+                            <!-- get a list of state from constants and iterate -->
+                            <% stateList.forEach(stateName=> { %>
+                                <option>
+                                    <%= stateName %>
+                                </option>
+                                <% }) %>
+                        </select>
+                    </div>
+                    <div class="space-y-2">
+                        <label
+                            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                            for="img_url">College Image</label>
+                        <input
+                            class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                            id="img_url" placeholder="Enter college image url" type="text">
+                    </div>
+                </div>
+                <button
+                    class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none bg-accent text-white hover:bg-accent/90 h-11 rounded-md px-8">
+                    Submit</button>
+            </div>
+        </div>
+    </main>
+
+    <footer><%- include('../components/footer'); %></footer>
+</body>
+
+</html>
